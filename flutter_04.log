@@ -1,0 +1,95 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create --platforms web --empty .
+
+## exception
+
+PathExistsException: PathExistsException: Creation failed, path = 'C:\Users\Zenith\Desktop\movie_app\lib' (OS Error: Cannot create a file when that file already exists.
+, errno = 183)
+
+```
+#0      _Directory.createSync (dart:io/directory_impl.dart:145:7)
+#1      _File.createSync (dart:io/file_impl.dart:341:14)
+#2      ForwardingFile.createSync (package:file/src/forwarding/forwarding_file.dart:26:16)
+#3      ErrorHandlingFile.createSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:265:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:552:14)
+#5      ErrorHandlingFile.createSync (package:flutter_tools/src/base/error_handling_io.dart:264:5)
+#6      Template.render.<anonymous closure> (package:flutter_tools/src/template.dart:350:28)
+#7      _LinkedHashMapMixin.forEach (dart:_compact_hash:765:13)
+#8      Template.render (package:flutter_tools/src/template.dart:310:24)
+#9      CreateBase.renderMerged (package:flutter_tools/src/commands/create_base.dart:431:21)
+<asynchronous suspension>
+#10     CreateBase.generateApp (package:flutter_tools/src/commands/create_base.dart:454:23)
+<asynchronous suspension>
+#11     CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:453:31)
+<asynchronous suspension>
+#12     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1559:27)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#14     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#15     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:487:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#17     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:422:5)
+<asynchronous suspension>
+#18     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#20     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.38.3, on Microsoft Windows [Version 10.0.19045.3324], locale en-US) [148ms]
+    • Flutter version 3.38.3 on channel stable at D:\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 19074d12f7 (5 weeks ago), 2025-11-20 17:53:13 -0500
+    • Engine revision 13e658725d
+    • Dart version 3.10.1
+    • DevTools version 2.51.1
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
+
+[✓] Windows Version (10 Pro 64-bit, 22H2, 2009) [365ms]
+
+[!] Android toolchain - develop for Android devices [94ms]
+    • Android SDK at D:\Android\Sdk
+    • Emulator version 36.2.12.0 (build_id 14214601) (CL:N/A)
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+    • ANDROID_HOME = D:\Android\Sdk
+    • ANDROID_SDK_ROOT = D:\Android\Sdk
+    ✗ No valid Android SDK platforms found in D:\Android\Sdk\platforms. Directory was empty.
+    • Try re-installing or updating your Android SDK,
+      visit https://flutter.dev/to/windows-android-setup for detailed instructions.
+
+[✓] Chrome - develop for the web [8ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop Windows apps [7ms]
+    ✗ Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[✓] Connected device (2 available) [81ms]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.19045.3324]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 143.0.7499.147
+
+[✓] Network resources [580ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
